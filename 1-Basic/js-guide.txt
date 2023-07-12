@@ -1,0 +1,22 @@
+
+Difference between var, let, const
+    ->The var, let, const use to define variable in javascript
+      where these are Difference
+
+      1. value change
+        ->In case of var allow to change the value
+        ->In case of let it also allow to change the value
+        ->In case of const it do not allow to change the value
+
+      2. variable re-declaration
+        ->In case of var it allow to re-declare a variable with the same name
+        ->In case of let it do not allow to re-declare a variable with the same name
+        ->In case of const it also do not allow to re-declare a variable with the same name
+
+      3. scope of variable
+        ->var it has global scope (we can access inside the block and outside of block)
+        ->let the scope the block level (only inside the block)
+        ->const the scope block level (only inside the block)
+-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
