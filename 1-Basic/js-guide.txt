@@ -18,5 +18,13 @@ Difference between var, let, const
         ->let the scope the block level (only inside the block)
         ->const the scope block level (only inside the block)
 -----------------------------------------------------------------------------------------------------
+  Difference between if and switch case ?
+    ->if
+        it use to check range condition - if(a>b)
+        it use to check exact condition - if(a==b)
+
+    ->switch case
+      it use to check only exact condition but not range condition
+      (a===b)
 -----------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------
