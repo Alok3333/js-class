@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Event</title>
+    <script>
+        const one = () => {
+            alert("This is working...");
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Javascript mouse event example.</h1>
+    <button onclick="one()">Single Click</button>
+    <button ondblclick="one()">Double Click</button>
+    <button onmousedown="one()">Mouse Down </button>
+    <button onmouseenter="one()">Mouse Enter</button>
+    <button onmousemove="one()">Mouse Move</button>
+    <button onmouseout="one()">Mouse Out</button>
+    On Change : <select onchange="one()">
+        <option>Choose</option>
+        <option>Bangalore</option>
+        <option>Pune</option>
+        <option>Mumbai</option>
+    </select>
+
+    <h1>On Change With Parameter</h1>
+    On Change : <select onchange="two(this.value)">
+        <option value="">Choose</option>
+        <option value="BGl">Bangalore</option>
+        <option value="PUNE">Pune</option>
+        <option value="MUM">Mumbai</option>
+    </select>
+
+    <script>
+        const two = (xyz) => {
+            alert(xyz);
+        }
+    </script>
+</body>
+
+</html>

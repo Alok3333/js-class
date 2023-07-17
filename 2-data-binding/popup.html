@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PopUp</title>
+    <script>
+        const one = () => {
+            alert("HI, Your E-mail Sent Successfully!...");
+        }
+
+        const two = () => {
+            let a = confirm("Are you sure to delete account!");
+            if (a == true) {
+                alert("Your account has deleted.");
+            } else {
+                alert("Your account is not deleting.");
+            }
+        }
+
+        const three = () => {
+            let a = prompt("Enter Your E-mail Id to send Download link...");
+            alert("The download link send To \n" + a);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Type of popup in javascript.</h1>
+
+    <h3>Alert()</h3>
+    <p>
+        The Alert() is Pre-defined javascript method. it use to give confirmation message to user with ok button.
+    </p>
+    <button type="button" onclick="one()">Alert Button</button>
+
+    <hr color="green" size="10" />
+
+    <h3>Confirm()</h3>
+    <p>
+        The Confirm() is also pre-defined javascript function it use to collect confirmation from user, it has two
+        button ok & cancel.
+        The ok return -> true, The cancel return -> false.
+    </p>
+    <button type="button" onclick="two()">Confirm Button</button>
+
+    <hr color="red" size="10" />
+
+    <h3>Prompt()</h3>
+    <p>
+        The Prompt() method use to ask input from user.
+    </p>
+    <button type="button" onclick="three()">Prompt Button</button>
+</body>
+
+</html>
