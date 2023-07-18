@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data binding</title>
+    <script>
+        const one = () => {
+            let cityName = document.getElementById("newcity").value;
+            alert(cityName);
+            document.getElementById("xyz").innerText = cityName;
+        }
+    </script>
+</head>
+<body>
+    <h1>Difference between .innerText & .value</h1>
+    <p>
+        Enter City Name : <input type="text" id="newcity" value="Bangalore"/>
+        <button onclick="one()">Print My City</button>
+    </p> 
+    <div id="xyz">I am here</div>   
+</body>
+</html>
