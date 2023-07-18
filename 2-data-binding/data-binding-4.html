@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data binding</title>
+    <script>
+        const one = () => {
+            let cityName = document.getElementById("newcity").value;
+            document.getElementById("xyz").innerText = cityName;
+            document.getElementById("total").innerText = "You have written : " + cityName.length + " Chars";
+            document.getElementById("pending").innerText = 100 - cityName.length + " - Chars left."; 
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Difference between .innerText & .value</h1>
+    <p>
+        <textarea id="newcity" value="Bangalore" onkeyup="one()" rows="6" cols="30" maxlength="100"></textarea>
+    </p>
+    <div id="xyz">I am here</div>
+
+    <h2 id="total">0</h2>
+    <p id="pending">0</p>
+</body>
+
+</html>
