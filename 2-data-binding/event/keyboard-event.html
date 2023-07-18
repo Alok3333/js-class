@@ -12,7 +12,7 @@
     </script>
 </head>
 
-<body>
+<body onload="one('Welcome Back')">
     <h1>KeyBoard Event Example</h1>
     <p>
         On Key Press : <input type="text" value="APPLE" onkeypress="one(this.value)" />
@@ -22,6 +22,12 @@
     </p>
     <p>
         On Key Up : <input type="text" value="ORANGE" onkeyup="one(this.value)" />
+    </p>
+    <p>
+        On Focus : <input type="text" value="Milk" onfocus="one(this.value)" />
+    </p>
+    <p>
+        On Blur : <input type="text" value="MOBILE" onblur="one(this.value)"/>
     </p>
 </body>
 
