@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data-binding</title>
+    <script>
+        let mydata = "<h1>Welcome To Javascripts</h1> <p> The p tag is working. </p>";
+        let message = "Please wait a processing...";
+        const one = () => {
+            // innerText if content hold only text
+            document.getElementById("xyz").innerText = message;
+        }
+
+        const two = () => {
+            // innerHTML if content hold text and tags
+            document.getElementById("xyz").innerHTML = mydata;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Difference between .innerText and .innerHTML.</h1>
+    <button onclick="one()">innerText</button>
+    <button onclick="two()">innerHTML</button>
+    <br /><br />
+
+    <div id="xyz"></div>
+</body>
+
+</html>
