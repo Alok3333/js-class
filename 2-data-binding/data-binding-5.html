@@ -5,6 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>data binding</title>
+
+    <style>
+        input {
+            background-color: #f1f1f1;
+            border: none;
+            font-size: 22px;
+            padding: 20px;
+            outline: none;
+        }
+
+        button {
+            padding: 20px;
+            background: cornflowerblue;
+            font-size: 22px;
+            margin: 10px 12px;
+            outline: none;
+            border: none;
+            width: 125px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        button:hover {
+            box-shadow: 5px 5px 0px #000;
+        }
+
+        h3 {
+            background: #f1f1f1;
+            width: 24%;
+            padding: 21px 15px;
+            font-size: 17px;
+            font-family: monospace;
+            box-shadow: 0px 3px 6px #dce7fb;
+        }
+    </style>
+
     <script>
         const one = () => {
             let mydata = document.getElementById("inputText").value;
@@ -15,20 +50,13 @@
 </head>
 
 <body>
-    <h2>create input text and show data with character length</h2>
-    <input type="text" id="inputText" placeholder="Enter Anythings..."
-        style="background-color: #f1f1f1; border: none; font-size: 22px; padding: 20px; outline: none;" />
-    <button onclick="one()" style="padding: 20px;
-    background: cornflowerblue;
-    font-size: 22px;
-    margin: 10px 12px;
-    outline: none;
-    box-shadow: 0px 0px 12px 2px whitesmoke;
-    border: none;
-    width: 125px;">save</button>
+    <div class="container">
+        <h2>create input text and show data with character length</h2>
+        <input type="text" id="inputText" placeholder="Enter Anythings..." />
+        <button onclick="one()">Go</button>
 
-    <h3 id="data"></h3>
-    <!-- <span id="total"></span> -->
+        <h3 id="data"></h3>
+    </div>
 </body>
 
 </html>
