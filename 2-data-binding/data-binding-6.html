@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data binding</title>
+    <script>
+        const one = () => {
+            let n1 = document.getElementById("n1").value;
+            let n2 = document.getElementById("n2").value;
+            let n3 = parseInt(n1) + parseInt(n2);
+
+            document.getElementById("result").innerText = "The Addition is : " + n3;
+        }
+
+        const two = () => {
+            let n1 = document.getElementById("n1").value;
+            let n2 = document.getElementById("n2").value;
+            let n3 = parseInt(n1) - parseInt(n2);
+
+            document.getElementById("result").innerText = "The Sub is : " + n3;
+        }
+
+        const three = () => {
+            let n1 = document.getElementById("n1").value;
+            let n2 = document.getElementById("n2").value;
+            let n3 = parseInt(n1) * parseInt(n2);
+
+            document.getElementById("result").innerText = "The Multiple is : " + n3;
+        }
+
+        const four = () => {
+            let n1 = document.getElementById("n1").value;
+            let n2 = document.getElementById("n2").value;
+            let n3 = parseInt(n1) / parseInt(n2);
+
+            document.getElementById("result").innerText = "The Divide is : " + n3;
+        }
+
+    </script>
+</head>
+<body>
+    <center>
+        <h1>Javascript input and output example.</h1>
+        <p>Enter No 1 : <input type="number" id="n1"/></p>
+        <p>Enter No 2 : <input type="number" id="n2"/></p>
+        <p>
+            <button onclick="one()">Add Btn</button>
+            <button onclick="two()">N1 - N2</button>
+            <button onclick="three()">N1 * N2</button>
+            <button onclick="four()">N1 / N2</button>
+        </p>
+        <h1 id="result">0</h1>
+    </center>
+</body>
+</html>
