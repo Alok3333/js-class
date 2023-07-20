@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data binding</title>
+    <script>
+        const one = () => {
+            document.getElementById('mypage').style.background = "red";
+            document.getElementById('mypage').style.color = "white";
+        }
+
+        const two = () => {
+            document.getElementById('mypage').style.background = "pink";
+            document.getElementById('mypage').style.color = "white";
+        }
+    </script>
+</head>
+<body id="mypage">
+    <h1>Apply CSS using Javascript</h1>
+    <button onclick="one()">Apply CSS - Red</button>
+    <button onclick="two()">Apply CSS - Pink</button>
+</body>
+</html>
