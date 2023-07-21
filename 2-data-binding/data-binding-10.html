@@ -26,6 +26,7 @@
         }
 
         button {
+            font-weight: 700;
             padding: 20px;
             border: none;
             font-size: 14px;
@@ -84,6 +85,27 @@
             }
             document.getElementById('container').innerHTML = data;
         }
+
+        const six = () => {
+            let city = ["Bangalore", "Pune", "Mumbai", "Delhi", "Patna", "Chennai"];
+            let data = "";
+
+            for (let i = 0; i < city.length; i++) {
+                data = data + "<p>" + city[i] + "</p>"; // a = a + b
+            }
+            document.getElementById('container').innerHTML = data;
+        }
+
+        const seven = () => {
+            let books = ["C", "C++", "HTML", "CSS", "JAVASCRIPT", "REACT JS", "NODE JS", "MONGODB", "PHP", "MYSQL"];
+            let data = "";
+
+            for (let i = 0; i < books.length; i++) {
+                data = data + "<p>" + books[i] + "</p>"; // a = a + b
+            }
+            document.getElementById('container').innerHTML = data;
+        }
+
     </script>
 </head>
 
@@ -95,6 +117,8 @@
         <button onclick="three()">Print 1 to 20 odd number</button>
         <button onclick="four()">Print 1 to 20 even number</button>
         <button onclick="five()">Print List Of Given Number</button>
+        <button onclick="six()">All City</button>
+        <button onclick="seven()">All Books</button>
     </header>
 
 
