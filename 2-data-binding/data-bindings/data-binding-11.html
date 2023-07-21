@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data binding</title>
+    <script>
+        let allItem = ["C", "C++", "HTML", "CSS", "JAVASCRIPT", "REACT JS", "NODE JS", "MONGODB", "PHP", "MYSQL"];
+
+        const getItem = () => {
+            let data = "";
+            for (let i = 0; i < allItem.length; i++) {
+                data = data + "<tr>";
+                data = data + "<td>" + i + "</td>";
+                data = data + "<td>" + allItem[i] + "</td>"; // a = a + b
+                data = data + "<td> <button>Delete</button> </td>";
+                data = data + "<tr>";
+            }
+            document.getElementById('container').innerHTML = data;
+        }
+    </script>
+</head>
+
+<body onload="getItem()">
+    <table cellpadding="15" border="1" cellspacing="0" width="600" align="center">
+        <thead>
+            <tr align="left">
+                <th>SL No</th>
+                <th>Item Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="container"></tbody>
+    </table>
+</body>
+
+</html>
