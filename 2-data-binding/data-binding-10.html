@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data binding</title>
+    <style>
+        #container {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            margin: auto;
+            width: 80%;
+        }
+
+        p {
+            font-size: 60px;
+            color: blue;
+            margin: 30px;
+            text-align: center;
+        }
+
+        header {
+            padding: 50px;
+            text-align: center;
+        }
+
+        button {
+            padding: 20px;
+            border: none;
+            font-size: 14px;
+            background: rgb(79, 150, 236);
+            color: #000;
+            cursor: pointer;
+            margin: 5px;
+            transition: all .5s ease-in-out;
+        }
+
+        button:hover {
+            box-shadow: 5px 5px 0px black;
+        }
+    </style>
+    <script>
+        const one = () => {
+            let data = "";
+            for (let i = 1; i <= 10; i++) {
+                data = data + "<p>" + i + "</p>";
+            }
+            document.getElementById('container').innerHTML = data;
+        }
+
+        const two = () => {
+            let data = "";
+            for (let i = 10; i <= 20; i++) {
+                data = data + "<p>" + i + "</p>";
+            }
+            document.getElementById('container').innerHTML = data;
+        }
+
+        const three = () => {
+            let data = "";
+            for (let i = 1; i <= 20; i++) {
+                if (i % 2 == 1) {
+                    data = data + "<p>" + i + "</p>";
+                }
+            }
+            document.getElementById('container').innerHTML = data;
+        }
+
+        const four = () => {
+            let data = "";
+            for (let i = 2; i <= 20; i = i + 2) {
+                data = data + "<p>" + i + "</p>";
+            }
+            document.getElementById('container').innerHTML = data;
+        }
+
+        const five = () => {
+            let start = prompt("Enter Starting Number");
+            let end = prompt("Enter Ending Number");
+            let data = "";
+            for (let i = start; i <= end; i++) {
+                data = data + "<p>" + i + "</p>";
+            }
+            document.getElementById('container').innerHTML = data;
+        }
+    </script>
+</head>
+
+<body onload="one()">
+    <header>
+        <h1>Javascript & loop</h1>
+        <button onclick="one()">Print 1 to 10</button>
+        <button onclick="two()">Print 10 to 20</button>
+        <button onclick="three()">Print 1 to 20 odd number</button>
+        <button onclick="four()">Print 1 to 20 even number</button>
+        <button onclick="five()">Print List Of Given Number</button>
+    </header>
+
+
+    <section id="container">
+    </section>
+</body>
+
+</html>
