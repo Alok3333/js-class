@@ -6,18 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>data binding</title>
     <style>
-        th,
-        td {
-            text-align: left;
-            font-size: 22px;
+        #container {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            width: 80%;
+            margin: auto;
         }
 
-        th {
+        .myitem {
+            margin: 20px;
+            padding: 10px;
+            font-size: 50px;
+            text-align: center;
+            background-color: rgb(100, 50, 70);
+            color: white;
+        }
+
+        p {
+            margin: auto;
+            word-break: break-all;
+        }
+
+        #msg {
             color: red;
-        }
-
-        td {
-            color: blue;
         }
     </style>
 
@@ -27,11 +38,10 @@
         const getItem = () => {
             let data = "";
             for (let i = 0; i < allItem.length; i++) {
-                data = data + "<tr>";
-                data = data + "<td>" + i + "</td>";
-                data = data + "<td>" + allItem[i] + "</td>"; // a = a + b
-                data = data + "<td> <button onclick='delitem(" + i + ")'>Delete</button> </td>";
-                data = data + "<tr>";
+                data = data + "<div class='myitem'>";
+                data = data + "<p>" + allItem[i] + "</p>"; // a = a + b
+                data = data + "<div> <button onclick='delitem(" + i + ")'>Delete</button> </div>";
+                data = data + "</div>";
             }
             document.getElementById('container').innerHTML = data;
         }
@@ -41,7 +51,7 @@
             if (status == true) {
                 allItem.splice(index, 1);
                 getItem();
-                alert("Item Deleted Successfully !");
+                document.getElementById("msg").innerText = "Item Deleted Successfully !";
             }
         }
 
@@ -50,27 +60,19 @@
             allItem.push(itemName);
             getItem() // reload the list after adding new item
             document.getElementById('newItem').value = "";
-            alert("item added successfully !");
+            document.getElementById("msg").innerText = "item added successfully !";
         }
     </script>
 </head>
 
 <body onload="getItem()">
     <h1 align="center">Array Add, List, Delete Using Javascript </h1>
+    <h3 id="msg" align="center"></h3>
     <p align="center">
         Enter Item Name : <input type="text" id="newItem" />
         <button onclick="save()">Save Item</button>
     </p>
-    <table cellpadding="15" border="1" cellspacing="0" width="600" align="center">
-        <thead>
-            <tr align="left">
-                <th>SL No</th>
-                <th>Item Name</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody id="container"></tbody>
-    </table>
+    <section id="container"></section>
 </body>
 
 </html>
