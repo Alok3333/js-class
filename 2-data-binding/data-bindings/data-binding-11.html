@@ -5,6 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>data binding</title>
+    <style>
+        th,
+        td {
+            text-align: left;
+            font-size: 22px;
+        }
+
+        th {
+            color: red;
+        }
+
+        td {
+            color: blue;
+        }
+    </style>
+
     <script>
         let allItem = ["C", "C++", "HTML", "CSS", "JAVASCRIPT", "REACT JS", "NODE JS", "MONGODB", "PHP", "MYSQL"];
 
@@ -23,6 +39,11 @@
 </head>
 
 <body onload="getItem()">
+    <h1 align="center">Array Add, List, Delete Using Javascript </h1>
+    <p>
+        Enter Item Name : <input type="text" id="newitem"/>
+        <button onclick="save()">Save Item</button>
+    </p>
     <table cellpadding="15" border="1" cellspacing="0" width="600" align="center">
         <thead>
             <tr align="left">
