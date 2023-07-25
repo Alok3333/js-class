@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data binding</title>
+</head>
+<style>
+    .container {
+        background: #f1f1f1;
+        margin: auto;
+        width: 80%;
+    }
+
+    .row {
+        display: flex;
+        margin: 80px 0px;
+        height: 788px;
+    }
+
+    .col-lg-3 {
+        padding: 20px 40px;
+        width: 30%;
+    }
+
+    .col-lg-9 {
+        padding: 20px 40px;
+        width: 70%;
+    }
+
+    .add-user {
+        padding: 5px;
+        text-align: center;
+        /* background: red; */
+    }
+
+    #newItem {
+        border: none;
+        outline: none;
+        padding: 10px 22px;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+
+    button {
+        background: #054B7D;
+        color: #fff;
+        padding: 14px 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        width: 28%;
+        cursor: pointer;
+        outline: none;
+    }
+
+    #itemList {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    }
+
+    .item {
+        background: #0C3A60;
+        color: #fff;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+        font-weight: 700;
+        width: 210px;
+        height: 150px;
+        border-radius: 10px;
+        transition: all .5s ease-in-out;
+    }
+
+    .item:hover {
+        border-radius: 0px;
+    }
+
+    p {
+        word-break: break-all;
+    }
+
+    .btn {
+        background: #FD7A7C;
+        color: #fff;
+        width: auto;
+        border: none;
+    }
+
+    #delMsg {
+        color: red;
+    }
+</style>
+
+<script>
+    const items = [];
+
+    const getItem = () => {
+        let data = "";
+        for (let i = 0; i < items.length; i++) {
+            data = data + "<div class='item'>";
+            data = data + "<p>" + "chars - " + items[i].length + "</p>"
+            data = data + "<p>" + items[i] + "</p>";
+            data = data + "<button class='btn' onclick='delItem(" + i + ")'>Remove</button>";
+            data = data + "</div>"
+        }
+        document.getElementById('itemList').innerHTML = data;
+        document.getElementById('total').innerText = items.length;
+    }
+
+    const save = () => {
+        let itemName = document.getElementById('newItem').value;
+        items.push(itemName);
+        getItem();
+        document.getElementById('newItem').value = '';
+    }
+
+    const delItem = (index) => {
+        items.splice(index, 1);
+        getItem();
+        document.getElementById("delMsg").innerHTML = "Deleted !"
+    }
+
+</script>
+
+<body onload="getItem()">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="add-user">
+                    <h3>Add Employee</h3>
+                    <input type="text" id="newItem" placeholder="Write name here..."/>
+                    <br /><br />
+                    <button onclick="save()">Save</button>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <h3>Total Employee - <span id="total"></span></h3>
+                <h3 id="delMsg"></h3>
+                <div id="itemList">
+                    <!-- <div class="item">
+                        <p>count of chars</p>
+                        <p>item1</p>
+                        <button class="btn">Remove</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
