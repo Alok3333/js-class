@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data binding</title>
+    <script>
+        let itemlist = [
+            {
+                itemName: "Apple",
+                price: 300,
+                qty: 10,
+            },
+            {
+                itemName: "Mongo",
+                price: 280,
+                qty: 5,
+            },
+            {
+                itemName: "Graps",
+                price: 120,
+                qty: 15,
+            },
+            {
+                itemName: "Gvaua",
+                price: 40,
+                qty: 6,
+            },
+        ];
+
+        const getItem = () => {
+            let data = "";
+            itemlist.map((item, index) => {
+                data = data + "<tr>";
+                data = data + "<td>" + index + "</td>";
+                data = data + "<td>" + item.itemName + "</td>";
+                data = data + "<td>" + item.price + "</td>";
+                data = data + "<td>" + item.qty + "</td>";
+                data = data + "<td><button onclick='delItem(" + index + ")'>Delete</button></td>";
+                data = data + "</tr>";
+            });
+            document.getElementById('container').innerHTML = data;
+        };
+
+        const delItem = (index) => {
+            itemlist.splice(index, 1);
+            getItem(); //calling back the function to reload the list
+        }
+
+        const save = () => {
+            let name = document.getElementById('newItem').value;
+            let price = document.getElementById('itemPrice').value;
+            let qty = document.getElementById('itemQty').value;
+
+            let newItems = { itemName: name, price: price, qty: qty };
+            itemlist = itemlist.concat(newItems); // a = a+b;
+            // itemlist.splice(0, 0, newItems);
+            getItem();
+
+            document.getElementById('newItem').value = "";
+            document.getElementById('itemPrice').value = "";
+            document.getElementById('itemQty').value = "";
+        }
+
+
+    </script>
+</head>
+
+<body onload="getItem()">
+    <h1 align="center">Array Of Objects</h1>
+
+    <table align="left" cellpadding="20">
+        <tr>
+            <th>Item Name</th>
+            <th><input type="text" id="newItem" /></th>
+        </tr>
+        <tr>
+            <th>Item Price</th>
+            <th><input type="text" id="itemPrice" /></th>
+        </tr>
+        <tr>
+            <th>Item Quantity</th>
+            <th><input type="text" id="itemQty" /></th>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <button onclick="save()">Add Item</button>
+            </th>
+        </tr>
+    </table>
+
+    <table align="right" cellpadding="15" border="1" bordercolor="red" cellspacing="0" width="60%">
+        <thead>
+            <tr align="left">
+                <th>Sl No</th>
+                <th>Item Name</th>
+                <th>Item Price</th>
+                <th>Item Quantity</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="container">
+            <tr>
+                <td colspan="5">No Records</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
