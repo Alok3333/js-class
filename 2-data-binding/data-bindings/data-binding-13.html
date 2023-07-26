@@ -38,16 +38,27 @@
                 data = data + "<td>" + item.price + "</td>";
                 data = data + "<td>" + item.qty + "</td>";
                 data = data + "<td><button onclick='delItem(" + index + ")'>Delete</button></td>";
+                data = data + "<td><button onclick='editItem(" + index + ")'>Edit</button></td>";
                 data = data + "</tr>";
             });
             document.getElementById('container').innerHTML = data;
         };
 
+        // delete item from the list
         const delItem = (index) => {
             itemlist.splice(index, 1);
             getItem(); //calling back the function to reload the list
         }
 
+        // update item from the list
+        const editItem = (index) => {
+            // console.log(itemlist[index]);
+            document.getElementById('newItem').value = itemlist[index].itemName;
+            document.getElementById('itemPrice').value = itemlist[index].price;
+            document.getElementById('itemQty').value = itemlist[index].qty;
+        }
+
+        // add item in the list
         const save = () => {
             let name = document.getElementById('newItem').value;
             let price = document.getElementById('itemPrice').value;
@@ -98,6 +109,7 @@
                 <th>Item Price</th>
                 <th>Item Quantity</th>
                 <th>Action</th>
+                <th>Edit</th>
             </tr>
         </thead>
         <tbody id="container">
