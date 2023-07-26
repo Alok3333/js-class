@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data binding</title>
+</head>
+<style>
+    .container {
+        background: #f1f1f1;
+        margin: auto;
+        width: 85%;
+    }
+
+    .row {
+        display: flex;
+        margin: 80px 0px;
+        height: 788px;
+    }
+
+    .col-lg-3 {
+        padding: 43px 10px;
+        width: 30%;
+    }
+
+    .col-lg-9 {
+        padding: 20px 40px;
+        width: 70%;
+    }
+
+    .add-user {
+        max-width: 570px;
+        margin: auto;
+        background: #fff;
+        box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+        border-radius: 10px;
+        padding: 35px;
+        margin-top: 40px;  
+    }
+
+    .card-input {
+        margin-bottom: 5px;
+    }
+
+    .inputFiled {
+        width: 90%;
+        height: 40px;
+        border-radius: 5px;
+        box-shadow: none;
+        border: 1px solid #ced6e0;
+        transition: all 0.3s ease-in-out;
+        font-size: 18px;
+        padding: 5px 15px;
+        background: none;
+        color: #1a3b5d;
+        font-family: "Source Sans Pro", sans-serif;
+    }
+
+    .addr {
+        height: 100px;
+    }
+
+    button {
+        background: #054B7D;
+        color: #fff;
+        padding: 14px 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        width: 28%;
+        cursor: pointer;
+        outline: none;
+    }
+
+    .saveBtn {
+        margin-top: 30px;
+        width: 100%;
+        height: 55px;
+        font-size: 22px;
+        font-weight: 500;
+        font-family: "Source Sans Pro", sans-serif;
+        box-shadow: 3px 10px 20px 0px rgba(35, 100, 210, 0.3);
+    }
+
+    #itemList {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .item {
+        background: #0C3A60;
+        color: #fff;
+        margin: 5px;
+        padding: 10px;
+        font-weight: 700;
+        width: 314px;
+        height: 214px;
+        border-radius: 10px;
+        transition: all .5s ease-in-out;
+    }
+
+    .item:hover {
+        border-radius: 0px;
+    }
+
+    p {
+        margin-left: 22px;
+        word-break: break-all;
+    }
+
+    .btn {
+        margin-left: 146px;
+        background: #FD7A7C;
+        color: #fff;
+        width: auto;
+        border: none;
+    }
+
+    #delMsg {
+        color: red;
+    }
+</style>
+
+<script>
+    let items = [
+        {
+            itemName: "Anup",
+            age: 23,
+            edu: "MCA",
+            address: "Marathahalli Bangalore.",
+        },
+        {
+            itemName: "Anup",
+            age: 23,
+            edu: "MCA",
+            address: "Marathahalli Bangalore.",
+        },
+        {
+            itemName: "Anup",
+            age: 23,
+            edu: "MCA",
+            address: "Marathahalli Bangalore.",
+        },
+        {
+            itemName: "Anup",
+            age: 23,
+            edu: "MCA",
+            address: "Marathahalli Bangalore.",
+        }
+
+    ];
+
+    const getItem = () => {
+        let data = "";
+
+        items.map((item, index) => {
+            data = data + "<div class='item'>";
+            data = data + "<p>" + item.itemName + "</p>";
+            data = data + "<p>" + item.age + "</p>";
+            data = data + "<p>" + item.edu + "</p>";
+            data = data + "<p>" + item.address + "</p>";
+            data = data + "<hr/>"
+            data = data + "<button onclick='editItem(" + index + ")'>Edit</button><button class='btn' onclick='delItem(" + index + ")'>Remove</button>";
+            data = data + "</div>";
+        });
+
+        document.getElementById("itemList").innerHTML = data;
+    }
+
+    const save = () => {
+        let name = document.getElementById("newItem").value;
+        let age = document.getElementById("age").value;
+        let edu = document.getElementById("edu").value;
+        let addr = document.getElementById("address").value;
+
+        let addUser = { itemName: name, age: age, edu: edu, address: addr };
+        items = items.concat(addUser);
+        // items.splice(5, 0, addUser);
+        getItem();
+
+        document.getElementById("newItem").value = "";
+        document.getElementById("age").value = "";
+        document.getElementById("edu").value = "";
+        document.getElementById("address").value = "";
+    }
+
+    const delItem = (index) => {
+        items.splice(index, 1);
+        getItem();
+    }
+
+    // const editItem = (index) => {
+        
+    //     items.splice(index, 0, )
+    // }
+
+</script>
+
+<body onload="getItem()">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="add-user">
+                    <h3>Add New User</h3>
+                    <div class="card-input">
+                    <input type="text" class="inputFiled" id="newItem" placeholder="Name" />
+                    </div>
+                    <br /><br />
+                    <div class="card-input">
+                    <input type="number" class="inputFiled" id="age" placeholder="Age" />
+                    </div>
+                    <br /><br />
+                    <div class="card-input">
+                    <input type="text" class="inputFiled" id="edu" placeholder="Education" />
+                    </div>
+                    <br /><br />
+                    <div class="card-input">
+                    <textarea id="address" class="inputFiled addr" placeholder="Address..."></textarea>
+                    </div>
+                    <button class="saveBtn" onclick="save()">Save</button>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <h3 id="delMsg"></h3>
+                <div id="itemList">
+                    <!-- <div class="item">
+                        <p>count of chars</p>
+                        <p>item1</p>
+                        <button class="btn">Remove</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
