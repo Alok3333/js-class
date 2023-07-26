@@ -44,30 +44,40 @@
             document.getElementById('container').innerHTML = data;
         };
 
-        // delete item from the list
+        // DELETE THE ITEM FROM THE LIST
         const delItem = (index) => {
             itemlist.splice(index, 1);
             getItem(); //calling back the function to reload the list
         }
 
-        // update item from the list
+        let itemIndex = -1; //Creating a global variable
+
+        // UPDATE THE ITEM FROM THE LIST
         const editItem = (index) => {
-            // console.log(itemlist[index]);
+            itemIndex = index; // assigning the index of an element to global variable
+
             document.getElementById('newItem').value = itemlist[index].itemName;
             document.getElementById('itemPrice').value = itemlist[index].price;
             document.getElementById('itemQty').value = itemlist[index].qty;
         }
 
-        // add item in the list
+        // ADDING ITEM IN THE LIST
         const save = () => {
             let name = document.getElementById('newItem').value;
             let price = document.getElementById('itemPrice').value;
             let qty = document.getElementById('itemQty').value;
 
             let newItems = { itemName: name, price: price, qty: qty };
-            itemlist = itemlist.concat(newItems); // a = a+b;
-            // itemlist.splice(0, 0, newItems);
-            getItem();
+
+            if (itemIndex != -1) {
+                itemlist[itemIndex] = newItems;
+                itemIndex = -1;   // RESET TO DEFAULT VALUE AS EMPTY
+            } else {
+                itemlist = itemlist.concat(newItems); // a = a+b;
+                // itemlist.splice(0, 0, newItems);
+            }
+
+            getItem();  //calling back the function to reload the list
 
             document.getElementById('newItem').value = "";
             document.getElementById('itemPrice').value = "";
