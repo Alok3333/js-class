@@ -95,7 +95,7 @@
         padding: 10px;
         font-weight: 700;
         width: 314px;
-        height: 214px;
+        height: 250px;
         border-radius: 10px;
         transition: all .5s ease-in-out;
     }
@@ -120,6 +120,10 @@
     #delMsg {
         color: red;
     }
+
+    .para {
+        height: 170px;
+    }
 </style>
 
 <script>
@@ -132,22 +136,22 @@
             address: "Marathahalli Bangalore.",
         },
         {
-            itemName: "Anup",
-            age: 23,
-            edu: "MCA",
-            address: "Marathahalli Bangalore.",
+            itemName: "Virat",
+            age: 34,
+            edu: "B.Com",
+            address: "Kalyan road near by railway station Mumbai Maharastra.",
         },
         {
-            itemName: "Anup",
-            age: 23,
+            itemName: "Pooja",
+            age: 28,
             edu: "MCA",
-            address: "Marathahalli Bangalore.",
+            address: "Main Gate Rd, IIT Area, Powai, Mumbai, Maharashtra 400076 Indian Institute of Technology Bombay, address.",
         },
         {
-            itemName: "Anup",
-            age: 23,
-            edu: "MCA",
-            address: "Marathahalli Bangalore.",
+            itemName: "Ritu",
+            age: 27,
+            edu: "MBBA",
+            address: "Main Gate Rd, IIT Area, Powai, Mumbai, Maharashtra 400076 Indian Institute of Technology Bombay, address.",
         }
 
     ];
@@ -157,10 +161,12 @@
 
         items.map((item, index) => {
             data = data + "<div class='item'>";
+            data = data + "<div class='para'>"
             data = data + "<p>" + item.itemName + "</p>";
             data = data + "<p>" + item.age + "</p>";
             data = data + "<p>" + item.edu + "</p>";
             data = data + "<p>" + item.address + "</p>";
+            data = data + "</div>";
             data = data + "<hr/>"
             data = data + "<button onclick='editItem(" + index + ")'>Edit</button><button class='btn' onclick='delItem(" + index + ")'>Remove</button>";
             data = data + "</div>";
