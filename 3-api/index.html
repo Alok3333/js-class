@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>api-1st-class</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        const one = () => {
+            document.getElementById("container").innerHTML = "<h1>Welcome Home</h1>";
+        }
+
+        const two = () => {
+            document.getElementById("container").innerHTML = "<h1>About Us</h1>";
+        }
+
+        const three = () => {
+            document.getElementById("container").innerHTML = "<h1>Book List</h1>";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <a href="#" onclick="one()">Home</a>
+        <a href="#" onclick="two()">About Us</a>
+        <a href="#" onclick="three()">Book List</a>
+        <a href="#" onclick="four()">User List</a>
+        <a href="#" onclick="five()">Blogs</a>
+        <a href="#" onclick="six()">Employee List</a>
+        <a href="#" onclick="seven()">Add Employee</a>
+    </header>
+
+    <section id="container">
+        <p align="center">No Data !</p>
+    </section>
+</body>
+</html>
