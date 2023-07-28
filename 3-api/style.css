@@ -30,3 +30,29 @@ h1 {
     color: orange;
     font-size: 70px;
 }
+
+.four {
+    display: inline-block;
+    width: 20%;
+    margin: 2%;
+    font-size: 35px;
+    font-weight: bold;
+    color: purple;
+}
+
+.five {
+    display: inline-block;
+    width: 25%;
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+}
+
+.two {
+    display: inline-block;
+    width: 40%;
+    margin: 2%;
+    font-size: 18px;
+    border-bottom: 2px solid blue;
+    padding: 2%;
+}

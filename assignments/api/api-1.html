@@ -1,0 +1,106 @@
+<!-- The api have created for get the data from file or server.
+    file like as about.html and book.json file also can we get.
+    server basically I tryed to get fake api data just like for example.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>api-1</title>
+    <style>
+        .container {
+            margin: auto;
+            width: 80%;
+            margin-top: 60px;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+        }
+    </style>
+
+    <script>
+        const one = () => {
+            fetch("user-list.json")
+            .then(res => res.json())
+            .then(userData => {
+                let userName = "";
+                userData.map((user) => {
+                    userName = userName + "<p>" + user + "</p>";
+                })
+                document.getElementById("userList").innerHTML = userName;
+            })
+        }
+
+        const two = () => {
+            fetch("book-list.json")
+            .then(res => res.json())
+            .then(books => {
+                let bookName = "";
+                books.map((book) => {
+                    bookName = bookName + "<p>" + book + "</p>";
+                })
+                document.getElementById("bookList").innerHTML = bookName;
+            })
+        }
+
+        const three = () => {
+            fetch("company-list.json")
+            .then(res => res.json())
+            .then(companys => {
+                let companyName = "";
+                companys.map((company) => {
+                    companyName = companyName + "<p>" + company + "</p>";
+                })
+                document.getElementById("companyList").innerHTML = companyName;
+            })
+        }
+
+        const four = () => {
+            fetch("emp-list.json")
+            .then(res => res.json())
+            .then(employees => {
+                let empName = "";
+                employees.map((emp) => {
+                    empName = empName + "<p>" + emp + "</p>";
+                })
+                document.getElementById("empList").innerHTML = empName;
+            })
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <section>
+            <div>
+                <h2>User List</h2>
+                <div class="box" id="userList"></div>
+                <button onclick="one()">get Data</button>
+            </div>
+            <div>
+                <h2>Book List</h2>
+                <div class="box" id="bookList"></div>
+                <button onclick="two()">get Data</button>
+            </div>
+            <div>
+                <h2>Company List</h2>
+                <div class="box" id="companyList"></div>
+                <button onclick="three()">get Data</button>
+            </div>
+            <div>
+                <h2>Employee List</h2>
+                <div class="box" id="empList"></div>
+                <button onclick="four()">get Data</button>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
