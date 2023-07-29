@@ -37,14 +37,14 @@
 
         const four = () => {
             fetch("user.json")
-            .then(res => res.json())
-            .then(team => {
-                let playing11 = "";
-                team.map((player, index) => {
-                    playing11 = playing11 + "<h4 class='five'>" + player + "</h4>";
-                });
-                document.getElementById("container").innerHTML = playing11;
-            })
+                .then(res => res.json())
+                .then(team => {
+                    let playing11 = "";
+                    team.map((player, index) => {
+                        playing11 = playing11 + "<h4 class='five'>" + player + "</h4>";
+                    });
+                    document.getElementById("container").innerHTML = playing11;
+                })
         }
 
         const five = () => {
@@ -58,6 +58,29 @@
                     document.getElementById("container").innerHTML = data;
                 })
         }
+
+        const six = () => {
+            fetch("../4-JSON-Server/data1.json")
+                .then(res => res.json())
+                .then(empArray => {
+                    let data = "";
+                    empArray.map((emp, index) => {
+                        data = data + "<div class='three'>";
+                        data = data + "<h2>" + emp.name + "</h2>";
+                        data = data + "<p>" + emp.age + "</p>";
+                        data = data + "<p>" + emp.edu + "</p>";
+                        data = data + "<p>" + emp.city + "</p>";
+                        data = data + "</div>";
+                    })
+                    document.getElementById("container").innerHTML = data;
+                })
+        }
+
+        const seven = () => {
+            window.location.href="newUser.html";
+        }
+
+
     </script>
 </head>
 
