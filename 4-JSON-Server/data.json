@@ -36,6 +36,32 @@
       "id": 5
     }
   ],
-  "book": [],
+  "book": [
+    {
+      "id": 1,
+      "name": "HTML",
+      "author": "Tim Berners-Lee"
+    },
+    {
+      "id": 1,
+      "name": "CSS",
+      "author": "Håkon Wium Lie"
+    },
+    {
+      "id": 1,
+      "name": "JAVASCRIPT",
+      "author": "Brendan Eich"
+    },
+    {
+      "id": 1,
+      "name": "BOOTSTRAP",
+      "author": "Mark Otto and Jacob Thornton"
+    },
+    {
+      "id": 1,
+      "name": "REACT JS",
+      "author": "Jordan Walke"
+    }
+  ],
   "company": []
 }

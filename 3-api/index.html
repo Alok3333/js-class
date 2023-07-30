@@ -24,14 +24,14 @@
         }
 
         const three = () => {
-            fetch("book.json")
+            fetch("http://localhost:3000/book")
                 .then(response => response.json())
                 .then(bookArray => {
                     let data = "";
                     bookArray.map((bookName, index) => {
                         data = data + "<div class='bookimg'>"
-                        data = data + "<img src='./images/book1.png' width='265px' height='300px'> <p class='four'>" + bookName + "</p> </img>"
-                        data = data + "" + "";
+                        data = data + "<img src='./images/book1.png' width='265px' height='300px'> <p class='four'>" + bookName.name + "</p> </img>"
+                        data = data + "<p class='author'>" + bookName.author + "</p>";
                         data = data + "</div>"
                     });
                     document.getElementById("container").innerHTML = data;
@@ -80,7 +80,15 @@
         }
 
         const seven = () => {
-            window.location.href="newUser.html";
+            window.location.href = "newUser.html";
+        }
+
+        const eight = () => {
+            window.location.href = "newBook.html";
+        }
+
+        const nine = () => {
+            window.location.href = "newCompany.html";
         }
 
 
@@ -96,6 +104,8 @@
         <a href="#" onclick="five()">Blogs</a>
         <a href="#" onclick="six()">Employee List</a>
         <a href="#" onclick="seven()">Add Employee</a>
+        <a href="#" onclick="eight()">Add Book</a>
+        <a href="#" onclick="nine()">Add Company</a>
     </header>
 
     <section id="container">
