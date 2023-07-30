@@ -32,9 +32,7 @@ h1 {
 }
 
 .four {
-    /* display: inline-block; */
-    /* width: 20%; */
-    /* margin: 2%; */
+    text-transform: uppercase;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
@@ -73,7 +71,7 @@ img {
 
 .bookimg {
     display: inline-block;
-    margin: 45px 13px;
+    margin: 45px 13px 0px 14px;
     box-shadow: 0px 0px 4px darkgrey;
 }
 
