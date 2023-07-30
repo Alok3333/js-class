@@ -1,34 +1,41 @@
 {
-    "user": [
-        {
-            "id": 1,
-            "name": "Ganesh",
-            "edu": "MCA",
-            "city": "Bangalore",
-            "age": "30 Years"
-        },
-        {
-            "id": 2,
-            "name": "Mahesh",
-            "edu": "BCA",
-            "city": "Mangalore",
-            "age": "34 Years"
-        },
-        {
-            "id": 3,
-            "name": "Ajit",
-            "edu": "DCA",
-            "city": "Pune",
-            "age": "38 Years"
-        },
-        {
-            "id": 4,
-            "name": "Alex",
-            "edu": "B .Tech",
-            "city": "Chennai",
-            "age": "40 Years"
-        }
-    ],
-    "book": [],
-    "company": []
+  "user": [
+    {
+      "id": 1,
+      "name": "Ganesh",
+      "edu": "MCA",
+      "city": "Bangalore",
+      "age": "30 Years"
+    },
+    {
+      "id": 2,
+      "name": "Mahesh",
+      "edu": "BCA",
+      "city": "Mangalore",
+      "age": "34 Years"
+    },
+    {
+      "id": 3,
+      "name": "Ajit",
+      "edu": "DCA",
+      "city": "Pune",
+      "age": "38 Years"
+    },
+    {
+      "id": 4,
+      "name": "Alex",
+      "edu": "B .Tech",
+      "city": "Chennai",
+      "age": "40 Years"
+    },
+    {
+      "name": "Kajal",
+      "age": "34",
+      "city": "Delhi",
+      "edu": "B.Tech",
+      "id": 5
+    }
+  ],
+  "book": [],
+  "company": []
 }

@@ -60,7 +60,7 @@
         }
 
         const six = () => {
-            fetch("../4-JSON-Server/data1.json")
+            fetch("http://localhost:3000/user")
                 .then(res => res.json())
                 .then(empArray => {
                     let data = "";

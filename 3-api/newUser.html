@@ -8,23 +8,23 @@
     <script>
 
         const save = () => {
-            let fullName = document.getElementById("empName").value;
-            let age = document.getElementById("empAge").value;
-            let city = document.getElementById("empCity").value;
-            let edu = document.getElementById("empEdu").value;
+            let fullName = document.getElementById("empname").value;
+            let empAge = document.getElementById("empage").value;
+            let empCity = document.getElementById("empcity").value;
+            let empEdu = document.getElementById("empedu").value;
 
-            let newEmp = { "name": "fullName", "edu": "edu", "city": "city", "age": "age" }
+            let newEmp = { "name": fullName, "age": empAge, "city": empCity, "edu": empEdu }
             let postData = {
                 headers: { 'Content-Type': 'application/json' },
                 method: "POST",
                 body: JSON.stringify(newEmp)  //convert to object into json format
             }
-            fetch("../4-JSON-Server/data1.json", postData)
+            fetch("http://localhost:3000/user", postData)
                 .then(res => res.json())
                 .then(empInfo => {
                     alert(empInfo.id + " is new employee id");
-                    window.location.href = "index.html";
-                })
+                    // window.location.href = "index.html";
+                });
 
         }
 
@@ -39,19 +39,19 @@
         </caption>
         <tr>
             <th>Employee Name</th>
-            <td><input type="text" id="empName" size="40" /></td>
+            <td><input type="text" id="empname" size="40" /></td>
         </tr>
         <tr>
             <th>Employee Age</th>
-            <td><input type="text" id="empAge" size="40" /></td>
+            <td><input type="text" id="empage" size="40" /></td>
         </tr>
         <tr>
             <th>Employee City</th>
-            <td><input type="text" id="empCity" size="40" /></td>
+            <td><input type="text" id="empcity" size="40" /></td>
         </tr>
         <tr>
             <th>Employee Education</th>
-            <td><input type="text" id="empEdu" size="40" /></td>
+            <td><input type="text" id="empedu" size="40" /></td>
         </tr>
         <tr>
             <th colspan="2">
