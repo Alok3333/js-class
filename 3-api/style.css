@@ -32,10 +32,11 @@ h1 {
 }
 
 .four {
-    display: inline-block;
-    width: 20%;
-    margin: 2%;
-    font-size: 35px;
+    /* display: inline-block; */
+    /* width: 20%; */
+    /* margin: 2%; */
+    text-align: center;
+    font-size: 18px;
     font-weight: bold;
     color: purple;
 }
@@ -64,4 +65,14 @@ h1 {
     font-size: 18px;
     box-shadow: 0px 0px 2px grey;
     padding: 1%;
+}
+
+img {
+    position: relative;
+}
+
+.bookimg {
+    display: inline-block;
+    margin: 45px 13px;
+    box-shadow: 0px 0px 4px darkgrey;
 }

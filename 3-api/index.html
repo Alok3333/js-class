@@ -29,7 +29,10 @@
                 .then(bookArray => {
                     let data = "";
                     bookArray.map((bookName, index) => {
-                        data = data + "<p class='four'>" + bookName + "</p>";
+                        data = data + "<div class='bookimg'>"
+                        data = data + "<img src='./images/book1.png' width='265px' height='300px'> <p class='four'>" + bookName + "</p> </img>"
+                        data = data + "" + "";
+                        data = data + "</div>"
                     });
                     document.getElementById("container").innerHTML = data;
                 })
