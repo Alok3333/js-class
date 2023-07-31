@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Company</title>
+
+    <script>
+        const save = () => {
+            let name = document.getElementById("companyname").value;
+
+            let newVal = {"name" : name};
+            let postData = {
+                headers: {'Content-Type' : 'application/json'},
+                method: "POST",
+                body: JSON.stringify(newVal)
+            }
+            fetch("http://localhost:3000/company", postData)
+            .then(res => res.json())
+            .then(comInfo => {
+                alert(comInfo.id + " Company Name Added !");
+            });
+
+            document.getElementById("companyname").value = "";
+        }
+    </script>
+</head>
+
+<body>
+    <table align="center">
+        <caption>
+            <h2>Add Company</h2>
+            <p><a href="index.html">Back to home</a></p>
+        </caption>
+        <tr>
+            <th>Add Company Name</th>
+            <td><input type="text" id="companyname" size="30"/></td>
+        </tr>
+        <tr>
+            <th colspan="2" align="right"><button onclick="save()">Add</button></th>
+        </tr>
+    </table>
+</body>
+
+</html>

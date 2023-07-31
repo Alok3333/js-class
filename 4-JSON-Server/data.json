@@ -68,5 +68,38 @@
       "id": 6
     }
   ],
-  "company": []
+  "company": [
+    {
+      "id": 1,
+      "name": "Meta"
+    },
+    {
+      "id": 2,
+      "name": "Adobe"
+    },
+    {
+      "id": 3,
+      "name": "Intel"
+    },
+    {
+      "id": 4,
+      "name": "Accenture"
+    },
+    {
+      "name": "Google",
+      "id": 5
+    },
+    {
+      "name": "Flipkart",
+      "id": 6
+    },
+    {
+      "name": "Hp",
+      "id": 7
+    },
+    {
+      "name": "Microsoft",
+      "id": 8
+    }
+  ]
 }

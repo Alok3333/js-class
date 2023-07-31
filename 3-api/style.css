@@ -82,3 +82,29 @@ img {
     padding: 6px;
     color: white;
 }
+
+.company {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.company p {
+    font-size: 22px;
+    font-family: system-ui;
+    letter-spacing: 0.1em;
+    margin: 0px 149px;
+    box-shadow: 0px 4px 6px slategray;
+    padding: 26px 20px;
+    width: 350px;
+    transition: .5s;
+}
+
+.company p:hover {
+    text-decoration: underline;
+    text-decoration-color: blue;
+    letter-spacing: 0.18em;
+    padding: 26px 40px;
+    text-decoration-thickness: 3px;
+}

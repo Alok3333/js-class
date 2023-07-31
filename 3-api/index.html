@@ -79,6 +79,20 @@
                 })
         }
 
+        const ten = () => {
+            fetch("http://localhost:3000/company")
+                .then(res => res.json())
+                .then(companyName => {
+                    let data = "";
+                    companyName.map((item, index) => {
+                        data = data + "<div class='company'>"
+                        data = data + "<p>" + item.name + "</p>";
+                        data = data + "</div>"
+                    })
+                    document.getElementById("container").innerHTML = data;
+                })
+        }
+
         const seven = () => {
             window.location.href = "newUser.html";
         }
@@ -91,7 +105,6 @@
             window.location.href = "newCompany.html";
         }
 
-
     </script>
 </head>
 
@@ -102,6 +115,7 @@
         <a href="#" onclick="three()">Book List</a>
         <a href="#" onclick="four()">User List</a>
         <a href="#" onclick="five()">Blogs</a>
+        <a href="#" onclick="ten()">Compnay Name</a>
         <a href="#" onclick="six()">Employee List</a>
         <a href="#" onclick="seven()">Add Employee</a>
         <a href="#" onclick="eight()">Add Book</a>
