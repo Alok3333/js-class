@@ -15,25 +15,18 @@
       "age": "34 Years"
     },
     {
-      "id": 3,
       "name": "Ajit",
-      "edu": "DCA",
+      "age": "38 Years",
       "city": "Pune",
-      "age": "38 Years"
+      "edu": "MBBA",
+      "id": 3
     },
     {
-      "id": 4,
-      "name": "Alex",
-      "edu": "B .Tech",
-      "city": "Chennai",
-      "age": "40 Years"
-    },
-    {
-      "name": "Kajal",
-      "age": "34",
-      "city": "Delhi",
-      "edu": "B.Tech",
-      "id": 5
+      "name": "Siyaram",
+      "age": "41",
+      "city": "Bangalore",
+      "edu": "MCA",
+      "id": 4
     }
   ],
   "book": [

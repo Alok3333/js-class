@@ -67,16 +67,66 @@
                 .then(res => res.json())
                 .then(empArray => {
                     let data = "";
-                    empArray.map((emp, index) => {
+                    empArray.reverse().map((emp, index) => {
                         data = data + "<div class='three'>";
                         data = data + "<h2>" + emp.name + "</h2>";
                         data = data + "<p>" + emp.age + "</p>";
                         data = data + "<p>" + emp.edu + "</p>";
                         data = data + "<p>" + emp.city + "</p>";
+                        data = data + "<button onclick='delUser(" + emp.id + ")'>Delete</button>";
+                        data = data + "<button onclick='editUser(" + JSON.stringify(emp) + ")'>Edit</button>";
                         data = data + "</div>";
                     })
                     document.getElementById("container").innerHTML = data;
                 })
+        }
+
+        // delete user method
+        const delUser = (userId) => {
+            let url = "http://localhost:3000/user/" + userId;
+            let postData = { method: "DELETE" }
+            fetch(url, postData)
+                .then(res => res.json())
+                .then(emptyResponse => {
+                    alert("User deleted successfully !");
+                    six();
+                })
+        }
+
+        // editUser the data
+        const editUser = (empInfo) => {
+            let data = "<div align='center'> <h1>Edit User</h1>";
+            data = data + "<p> fullName : <input type='text' id='fname' value='" + empInfo.name + "'/></p>";
+            data = data + "<p> Age : <input type='text' id='age' value='" + empInfo.age + "'/></p>";
+            data = data + "<p> Education : <input type='text' id='edu' value='" + empInfo.edu + "'/></p>";
+            data = data + "<p> City : <input type='text' id='city' value='" + empInfo.city + "'/></p>";
+            data = data + "<p> <button onclick='updateInfo(" + empInfo.id + ")'>Update Details</button> <p>";
+            data = data + "</div>";
+            document.getElementById("container").innerHTML = data;
+        }
+
+        // Update the user
+        const updateInfo = (userId) => {
+            let fullName = document.getElementById("fname").value;
+            let empAge = document.getElementById("age").value;
+            let empCity = document.getElementById("city").value;
+            let empEdu = document.getElementById("edu").value;
+
+            let newEmp = { "name": fullName, "age": empAge, "city": empCity, "edu": empEdu }
+            let postData = {
+                headers: { 'Content-Type': 'application/json' },
+                method: "PUT",
+                body: JSON.stringify(newEmp)  //convert to object into json format
+            }
+
+            let url = "http://localhost:3000/user/" + userId;
+            fetch(url, postData)
+                .then(res => res.json())
+                .then(empInfo => {
+                    alert(fullName + " Updated successfully !");
+                    //to reload the six
+                    six();
+                });
         }
 
         const ten = () => {
@@ -108,7 +158,7 @@
     </script>
 </head>
 
-<body onload="one()">
+<body onload="six()">
     <header>
         <a href="#" onclick="one()">Home</a>
         <a href="#" onclick="two()">About Us</a>
